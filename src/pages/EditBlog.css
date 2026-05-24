@@ -1,0 +1,358 @@
+/* =======================
+   EDIT BLOG PREMIUM UI
+======================= */
+
+.edit-page{
+  min-height:100vh;
+  background:#050505;
+  padding:60px 20px;
+  color:white;
+}
+
+.edit-container{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* HEADER */
+.edit-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.edit-header h1{
+  font-size:42px;
+  font-weight:800;
+  color:#eaff00;
+}
+
+.edit-header p{
+  color:#9a9a9a;
+  margin-top:10px;
+}
+
+/* FORM */
+.edit-form{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+/* CARD */
+.card{
+  background:#0d0d0d;
+  border:1px solid rgba(255,255,255,0.06);
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 0 30px rgba(234,255,0,0.04);
+}
+
+/* GRID */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+/* FIELD */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.field label{
+  font-size:13px;
+  color:#cfcfcf;
+}
+
+.field input,
+.field select,
+.field textarea{
+  background:#0a0a0a;
+  border:1px solid rgba(255,255,255,0.08);
+  padding:14px;
+  border-radius:14px;
+  color:white;
+  outline:none;
+  transition:0.3s;
+}
+
+.field textarea{
+  min-height:90px;
+  resize:none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#eaff00;
+  box-shadow:0 0 15px rgba(234,255,0,0.15);
+}
+
+.full{
+  margin-top:15px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  display:block;
+  font-size:14px;
+  color:#eaff00;
+  margin-bottom:15px;
+}
+
+/* IMAGE UPLOAD */
+.upload-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  height:160px;
+  border:2px dashed rgba(255,255,255,0.1);
+  border-radius:18px;
+  cursor:pointer;
+  color:#aaa;
+  transition:0.3s;
+}
+
+.upload-box:hover{
+  border-color:#eaff00;
+  color:#eaff00;
+  transform:scale(1.01);
+}
+
+.image-preview{
+  position:relative;
+}
+
+.image-preview img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+.image-preview button{
+  position:absolute;
+  top:12px;
+  right:12px;
+
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  background:white;
+  cursor:pointer;
+}
+
+/* EDITOR */
+.editor{
+  background:#0a0a0a;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+/* ACTION BUTTONS */
+/* =========================
+   PREMIUM ACTION BUTTONS
+========================= */
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:14px;
+  margin-top:2px;
+}
+
+/* base button style */
+.actions button{
+  padding:20px 100px;
+  border-radius:14px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:0.3px;
+  transition:0.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle shine effect */
+.actions button::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  transition:0.6s;
+}
+
+.actions button:hover::before{
+  left:100%;
+}
+
+/* =======================
+   CANCEL BUTTON (glass)
+======================= */
+
+.actions button:first-child{
+  background:rgba(255,255,255,0.06);
+  color:#cfcfcf;
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(10px);
+}
+
+.actions button:first-child:hover{
+  color:#fff;
+  border-color:rgba(255,255,255,0.25);
+  transform:translateY(-3px);
+  box-shadow:0 0 20px rgba(255,255,255,0.08);
+}
+
+/* =======================
+   SAVE BUTTON (premium neon CTA)
+======================= */
+
+.actions button:last-child{
+  background:linear-gradient(135deg,#eaff00,#c8ff00);
+  color:#000;
+  font-weight:800;
+  box-shadow:0 0 25px rgba(234,255,0,0.25);
+}
+
+.actions button:last-child:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:
+    0 0 25px #eaff00,
+    0 0 60px rgba(234,255,0,0.4);
+}
+
+/* click effect */
+.actions button:active{
+  transform:scale(0.96);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+
+  .edit-header h1{
+    font-size:32px;
+  }
+}
+
+/* ==========================================================================
+   UPGRADED MOBILE RESPONSIVE ENGINE (FOR SMARTPHONES & TABLETS)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Base Structure Overhaul */
+  .edit-page {
+    padding: 30px 14px; /* Kam screen size par border bleed se bachane ke liye spacing */
+  }
+
+  /* 2. Responsive Header */
+  .edit-header {
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+
+  .edit-header h1 {
+    font-size: 28px; /* High resolution scale scaled down for narrow width */
+    letter-spacing: -0.5px;
+  }
+
+  .edit-header p {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  /* 3. Card Configuration */
+  .card {
+    padding: 20px 16px; /* Content space balance optimization */
+    border-radius: 16px;
+  }
+
+  /* 4. Layout Grid Flattener */
+  .grid-2 {
+    grid-template-columns: 1fr; /* Double columns completely stacked into single rows */
+    gap: 16px;
+  }
+
+  .full {
+    margin-top: 0; /* Align perfectly with single column margins */
+  }
+
+  /* 5. Rich Text Editor Layout Safe Mode */
+  .editor .ql-toolbar.ql-snow {
+    display: flex;
+    flex-wrap: wrap; /* Editor toolbar features break seamlessly into new rows */
+    gap: 4px;
+    padding: 8px !important;
+  }
+
+  .editor .ql-container.ql-snow {
+    min-height: 200px; /* Viewport adjustment */
+  }
+
+  /* 6. Form Target Sizing */
+  .field input,
+  .field select,
+  .field textarea {
+    padding: 12px;
+    font-size: 15px; /* Better mobile readability and prevents iOS auto-zoom */
+  }
+
+  /* 7. Action Buttons Grid Flip */
+  .actions {
+    flex-direction: column-reverse; /* Save changes moves on top for quick thumb-reach */
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* Base button stretch behavior overrides */
+  .actions button {
+    width: 100%;
+    padding: 30px 40px !important; /* Resets desktop 100px fixed width behavior */
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Disabled transformation tracking on small interfaces */
+  .actions button:hover {
+    transform: none !important; /* Prevents sticky hover state artifacts on mobile touch screens */
+  }
+
+  .actions button:last-child:hover {
+    box-shadow: 0 0 20px rgba(234, 255, 0, 0.4);
+  }
+}
+
+/* Extra micro layouts support (e.g., small screens up to 380px) */
+@media (max-width: 380px) {
+  .edit-header h1 {
+    font-size: 24px;
+  }
+  
+  .card {
+    padding: 16px 12px;
+  }
+}

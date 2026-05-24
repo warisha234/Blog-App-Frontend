@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #f0f2f5; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+.quill { border-radius: 12px; overflow: hidden; }
+.ql-toolbar { border: 1px solid #e5e7eb !important; border-radius: 12px 12px 0 0 !important; }
+.ql-container { border: 1px solid #e5e7eb !important; border-radius: 0 0 12px 12px !important; min-height: 250px; }
+.ql-editor { font-family: 'DM Sans', sans-serif; font-size: 15px; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }

@@ -1,0 +1,155 @@
+/* =========================
+   SETTINGS - DANGER ZONE UI
+========================= */
+
+.settings-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* CONTAINER */
+.settings-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+/* HEADER */
+.settings-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.settings-header h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.settings-header p {
+  color: #9a9a9a;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* DANGER BOX */
+.danger-zone {
+  background: #0d0d0d;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 25px;
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.05);
+}
+
+/* RED GLOW EFFECT */
+.danger-zone::before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 0, 0, 0.08);
+  border-radius: 50%;
+  top: -80px;
+  right: -80px;
+  filter: blur(80px);
+}
+
+/* TITLE */
+.danger-zone h2 {
+  color: #ff3b3b;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.danger-zone p {
+  color: #b5b5b5;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* BUTTON AREA */
+.danger-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* DEACTIVATE BUTTON */
+.deactivate-btn {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.deactivate-btn:hover {
+  border-color: #eaff00;
+  color: #eaff00;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(234,255,0,0.15);
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  flex: 1;
+  background: #ff1f1f;
+  border: none;
+  color: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
+
+.delete-btn:hover {
+  background: #ff0000;
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(255,0,0,0.4);
+}
+
+/* LOADING TEXT */
+.loading-text {
+  margin-top: 18px;
+  color: #eaff00;
+  font-size: 14px;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+/* ANIMATION */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .danger-actions {
+    flex-direction: column;
+  }
+
+  .settings-header h1 {
+    font-size: 30px;
+  }
+
+  .danger-zone {
+    padding: 25px;
+  }
+}

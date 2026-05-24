@@ -1,0 +1,345 @@
+
+
+
+/* ==========================================================================
+   ULTRA-RESPONSIVE CYBER-DARK COMMENT SECTION STYLE
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-section: #050505;
+  --bg-input: #0a0a0a;
+  --bg-box: #0d0d0d;
+  --neon-yellow: #eaff00;
+  --neon-glow: rgba(234, 255, 0, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --text-main: #ffffff;
+  --text-muted: #9a9a9a;
+  --text-light: #cfcfcf;
+  --radius-xl: 18px;
+  --radius-md: 12px;
+  --transition-fast: 0.25s ease;
+}
+
+/* Base Wrapper - Kisi bhi width mein fit hone ke liye fluid width */
+.comment-section {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  width: 100%;
+  max-width: 800px; /* Readability ke liye optimal width */
+  margin: 24px auto;
+  padding: 0 16px;
+  color: var(--text-main);
+  background: var(--bg-section);
+  box-sizing: border-box;
+}
+
+/* Title Section */
+.comment-section .title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--neon-yellow);
+  margin-bottom: 20px;
+}
+
+/* Form Layout - Flex wrap added to prevent squeezing */
+.comment-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-box);
+  border: 1px solid var(--border-subtle);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-fast);
+}
+
+.comment-form:focus-within {
+  border-color: rgba(234, 255, 0, 0.3);
+  box-shadow: 0 0 15px rgba(234, 255, 0, 0.06);
+}
+
+/* Universal Avatars */
+.comment-section .avatar,
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--neon-yellow);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.comment-section .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Input Wrapper */
+.comment-form input {
+  flex-grow: 1;
+  min-width: 60px; /* Prevents disappearing on small screens */
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 6px 2px;
+}
+
+.comment-form input::placeholder {
+  color: #55555d;
+}
+
+/* Form Action Buttons */
+.comment-form .cancel {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+
+.comment-form .cancel:hover {
+  color: #ef4444;
+}
+
+.send-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+  color: #000000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.send-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(234, 255, 0, 0.4);
+}
+
+.send-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Comment Core Lists */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Comment Architecture - Outer Box */
+.comment-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Inner Message Box - Auto wrapping handling */
+.comment-box {
+  flex-grow: 1;
+  min-width: 0; /* Extremely Critical: Prevents flex child from breaking screen parent */
+  background: var(--bg-box);
+  border: 1px solid var(--border-subtle);
+  padding: 14px 16px;
+  border-radius: var(--radius-xl);
+}
+
+/* Header Alignment - Continuous Flexible Grid */
+.comment-header {
+  display: flex;
+  flex-wrap: wrap; /* Automatic wrap adjustment on ultra-small screens */
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.comment-header .name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.comment-header .actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.comment-header .date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Interactive Utility Buttons */
+.reply-btn {
+  background: transparent;
+  border: none;
+  color: var(--neon-yellow);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 0;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  font-size: 0; /* Raw emoji string content collapse */
+}
+
+.delete-btn svg {
+  display: block;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Comment text paragraph */
+.comment-item .text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.45;
+  word-break: break-word; /* Auto break links/long words */
+}
+
+/* Nested Reply Branch Linkage Setup */
+.comment-item.reply {
+  margin-left: 48px; /* Desktop nesting depth */
+  position: relative;
+  width: calc(100% - 48px); /* Container bounding synchronization */
+}
+
+/* Guide Line indicators */
+.comment-item.reply::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: -10px;
+  width: 12px;
+  height: 28px;
+  border-left: 1.5px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.06);
+  border-bottom-left-radius: 6px;
+}
+
+.comment-section .empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   SMART BREAKPOINTS (NO MORE OVERLAPPING OR CLIPPING)
+   ========================================================================== */
+
+/* Tablet Viewports and Below */
+@media (max-width: 600px) {
+  .comment-section {
+    padding: 0 12px;
+    margin: 16px auto;
+  }
+
+  /* Compress padding to gain maximum layout space */
+  .comment-box {
+    padding: 12px 14px;
+  }
+
+  /* Reduce nesting indentation to avoid squeezing text block */
+  .comment-item.reply {
+    margin-left: 28px;
+    width: calc(100% - 28px);
+  }
+
+  .comment-item.reply::before {
+    left: -16px;
+    width: 8px;
+  }
+}
+
+/* Mobile Small Viewports (Smartphones under 400px) */
+@media (max-width: 400px) {
+  .comment-form {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .comment-item {
+    gap: 8px;
+  }
+
+  .comment-section .avatar,
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  /* Structural adjustment: Shifting Header for maximum space efficiency */
+  .comment-header {
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  /* Makes actions shift smoothly under the name instead of colliding horizontally */
+  .comment-header .actions {
+    width: 100%;
+    margin-top: 2px;
+    gap: 10px;
+  }
+  
+  .comment-item.reply {
+    margin-left: 16px;
+    width: calc(100% - 16px);
+  }
+  
+  .comment-item.reply::before {
+    display: none; /* Sub-pixel screens par alignment line hide kar di */
+  }
+}

@@ -1,0 +1,238 @@
+/* =======================
+   NAVBAR PREMIUM FIXED
+======================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 24px;
+
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* =======================
+   SEARCH BOX (CENTER FIX)
+======================= */
+
+.search-box {
+  position: relative;
+
+  flex: 1;
+  max-width: 420px;
+
+  margin: 0 auto;   /* 👈 IMPORTANT: removes sidebar shift */
+}
+
+.search-box input {
+  width: 100%;
+
+  padding: 11px 14px 11px 38px;
+
+  border-radius: 14px;
+
+  background: #0f0f0f;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #fff;
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #dfff00;
+  box-shadow: 0 0 18px rgba(223, 255, 0, 0.18);
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* =======================
+   RIGHT SIDE
+======================= */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* WRITE BUTTON */
+.write-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 14px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(90deg, #dfff00, #ffea00);
+  color: #000;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow: 0 0 18px rgba(223, 255, 0, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.write-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(223, 255, 0, 0.4);
+}
+
+/* NOTIFICATION */
+.notif-btn {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 12px;
+
+  background: #111;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  color: #aaa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.notif-btn:hover {
+  border-color: #dfff00;
+  color: #dfff00;
+}
+
+.dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  background: red;
+  border-radius: 50%;
+}
+
+/* PROFILE */
+.profile img,
+.avatar-fallback {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(223, 255, 0, 0.3);
+}
+
+.avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #dfff00, #ffea00);
+  color: black;
+
+  font-weight: 700;
+}
+
+/* LOGIN */
+.login {
+  font-size: 13px;
+  color: #dfff00;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* =======================
+   DROPDOWN FIX
+======================= */
+
+.search-dropdown {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  width: 100%;
+
+  background: #0d0d0d;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  z-index: 999;
+
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
+}
+
+.search-item {
+  padding: 12px 14px;
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-item:hover {
+  background: #111;
+  transform: translateX(4px);
+}
+
+/* =======================
+   MOBILE FIX
+======================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .search-box {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+}
+
